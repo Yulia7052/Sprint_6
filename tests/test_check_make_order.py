@@ -1,9 +1,12 @@
+import allure
+
 from pages.main_page_helper import MainPageHelper
 from pages.order_page_helper import OrderPageHelper
 
 
 class TestOrder:
 
+    @allure.title('Проверка оформления заказа по кнопке в верхней части страницы')
     def test_check_make_order_from_header(self, driver):
         main_helper = MainPageHelper(driver)
         order_helper = OrderPageHelper(driver)
@@ -34,6 +37,7 @@ class TestOrder:
 
         assert "Заказ оформлен" in success_text
 
+    @allure.title('Проверка оформления заказа по кнопке в средней части страницы')
     def test_check_make_order_from_middle(self, driver):
         main_helper = MainPageHelper(driver)
         order_helper = OrderPageHelper(driver)

@@ -6,7 +6,11 @@ class BasePage:
     site_url = 'https://qa-scooter.praktikum-services.ru/'
 
     def __init__(self, driver):
-        self.driver = driver
+        self._driver = driver
+
+    @property
+    def driver(self):
+        return self._driver
 
     def get_main_page(self):
         self.driver.get(self.site_url)

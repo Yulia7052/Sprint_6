@@ -1,3 +1,4 @@
+import allure
 import pytest
 
 from pages.main_page_helper import MainPageHelper
@@ -5,6 +6,7 @@ from pages.main_page_helper import MainPageHelper
 
 class TestQuestions:
 
+    @allure.title('Параметризированный тест для проверки корректности ответов на важные вопросы')
     @pytest.mark.parametrize(
         'question_number,question_text',
         [
